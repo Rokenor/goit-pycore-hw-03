@@ -5,6 +5,8 @@ def get_numbers_ticket(min, max, quantity):
     return 'min can\'t be less than 1'
   if max > 1000:
     return 'max can\'t be more than 1000'
+  if quantity > max-min:
+    return 'quantity can\'t be more than (max - min) number'
   if quantity <=0:
     quantity = 1
 
@@ -20,9 +22,10 @@ def get_numbers_ticket(min, max, quantity):
   return result_list
 
 #self-checks
-print(get_numbers_ticket(1, 10, 5));
-print(get_numbers_ticket(100, 200, 10));
-print(get_numbers_ticket(10, 200, 0));
+print(get_numbers_ticket(1, 10, 5))
+print(get_numbers_ticket(100, 200, 10))
+print(get_numbers_ticket(10, 200, 0))
+print(get_numbers_ticket(10, 11, 6))
 
 #example
 lottery_numbers = get_numbers_ticket(1, 49, 6)
